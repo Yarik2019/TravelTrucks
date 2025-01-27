@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
-  // persistReducer,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -9,22 +9,18 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-// import storage from "redux-persist/lib/storage";
+import storage from "redux-persist/lib/storage";
 
-// import { authReducer } from "./auth/slice";
-// import { filterReducer } from "./filters/slice";
-// import { contactReducer } from "./contacts/slice";
-// const authPersistConfig = {
-//   key: "contacts",
-//   version: 1,
-//   storage,
-//   whitelist: ["items"],
-// };
-
+const catalogConfig = {
+  key: "campers",
+  version: 1,
+  storage,
+  whitelist: ["items"],
+};
+import { campersReducer } from "./campers/slice";
 export const store = configureStore({
   reducer: {
-    // contacts: persistReducer(authPersistConfig, contactReducer),
-    // filters: filterReducer,
+    catalog: persistReducer(catalogConfig, campersReducer),
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

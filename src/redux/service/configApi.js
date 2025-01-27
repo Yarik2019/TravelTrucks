@@ -1,14 +1,5 @@
 import axios from "axios";
 
-export const aquaDevApi = axios.create({
-  baseURL: "https://aquadev-back.onrender.com",
-  // baseURL: 'http://localhost:3000',
-  headers: {
-    "Content-Type": "application/json",
-  },
-  withCredentials: true,
+export const travelTrucksApi = axios.create({
+  baseURL: "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/",
 });
-
-export const setAuthHeader = (token) => {
-  aquaDevApi.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
