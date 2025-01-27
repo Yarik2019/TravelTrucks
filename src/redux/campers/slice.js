@@ -2,25 +2,25 @@ import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { fetchCampers, fetchCamperById } from "./operations";
 
 const initialState = {
-  items: [],
+  campers: [],
   isLoading: false,
   isError: null,
 };
 
 const campersSlice = createSlice({
-  name: "contacts",
+  name: "campers",
   initialState,
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isError = null;
-        state.items = action.payload;
+        state.campers = action.payload;
       })
       .addCase(fetchCamperById.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isError = null;
-        state.items = action.payload;
+        state.campers = action.payload;
       })
       .addMatcher(
         isAnyOf(fetchCampers.pending, fetchCamperById.pending),

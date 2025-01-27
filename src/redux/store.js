@@ -15,7 +15,7 @@ const catalogConfig = {
   key: "campers",
   version: 1,
   storage,
-  whitelist: ["items"],
+  whitelist: ["campers"],
 };
 import { campersReducer } from "./campers/slice";
 export const store = configureStore({

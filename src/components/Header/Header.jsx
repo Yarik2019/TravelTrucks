@@ -7,7 +7,7 @@ const Header = () => {
   };
   return (
     <div className={s.wrapper}>
-      <div>Routing</div>
+      <h1 className="text-2xl font-bold underline">Hello world!</h1>
       <div className={s.wrapperLinks}>
         <NavLink className={buildLinkClass} to="/">
           Home
