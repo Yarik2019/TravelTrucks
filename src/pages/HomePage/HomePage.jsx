@@ -12,7 +12,13 @@ const HomePage = () => {
   }, [dispatch]);
 
   return (
-    <div className="h-screen bg-[url('/assets/img/truck_bg.jpg')] bg-cover bg-center bg-no-repeat bg-retina">
+    <div
+      style={{
+        backgroundImage:
+          "url(https://raw.githubusercontent.com/Yarik2019/conversion/refs/heads/main/truck_bg.jpg)",
+      }}
+      className="h-screen bg-black  bg-cover bg-center bg-no-repeat bg-retina"
+    >
       <div className="max-w-[1440px] m-auto h-full px-4 sm:px-8 md:px-16 flex flex-col justify-center">
         <div className="h-44">
           <h1 className="text-gray-100 text-4xl sm:text-5xl font-semibold leading-8 mb-4">
