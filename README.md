@@ -60,11 +60,7 @@ The application will be accessible at:
 ---
 
 ## 👤 Author
-**Name:** Dmytro Ostapchuk  
-📧 **Email:** d.ostapchuk91@gmail.com  
-🔗 **LinkedIn:** [Dmytro Ostapchuk](https://www.linkedin.com/in/dmytro-ostapchuk)  
+**Name:** Yaroslav Terno
+📧 **Email:** yroslavterno@gmail.com 
+🔗 **LinkedIn:** [Yaroslav Terno](https://www.linkedin.com/in/yaroslav-terno)  
 
----
-
-## 📜 License
-This project is licensed under the **MIT License**. Feel free to use and modify it as needed.
