@@ -17,7 +17,7 @@ const HomePage = () => {
         backgroundImage:
           "url(https://raw.githubusercontent.com/Yarik2019/conversion/refs/heads/main/truck_bg.jpg)",
       }}
-      className="h-screen bg-black  bg-cover bg-center bg-no-repeat bg-retina"
+      className="h-screen bg-black bg-cover bg-center bg-no-repeat bg-retina"
     >
       <div className="max-w-[1440px] m-auto h-full px-4 sm:px-8 md:px-16 flex flex-col justify-center">
         <div className="h-44">
@@ -27,7 +27,7 @@ const HomePage = () => {
           <p className="text-gray-100 text-xl sm:text-2xl leading-8 font-semibold mb-10">
             You can find everything you want in our catalog
           </p>
-          <CommonButton value={"View No"} redirect={"catalog"} />
+          <CommonButton value={"View Now"} redirect={"catalog"} />
         </div>
       </div>
     </div>
