@@ -11,16 +11,18 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-const catalogConfig = {
-  key: "campers",
+const persistFavorites = {
+  key: "favorites",
   version: 1,
   storage,
-  whitelist: ["campers"],
+  whitelist: ["favorites"],
 };
 import { campersReducer } from "./campers/slice";
+import { favoritesReducer } from "./favorites/slice";
 export const store = configureStore({
   reducer: {
-    catalog: persistReducer(catalogConfig, campersReducer),
+    campers: campersReducer,
+    favorites: persistReducer(persistFavorites, favoritesReducer),
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

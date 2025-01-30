@@ -4,14 +4,14 @@ import { errToast, successfullyToast } from "../../utils/toast";
 
 export const fetchCampers = createAsyncThunk(
   "catalog/catalogAll",
-  async (filters, thunkAPI) => {
+  async ({ params, page, limit = 4 }, thunkAPI) => {
     try {
-      const { data } = await travelTrucksApi.get("/campers", {
-        params: filters,
-      });
+      const { data } = await travelTrucksApi.get(
+        `/campers?${params}&limit=${limit}&page=${page}`
+      );
       successfullyToast("Successfully loaded!");
       console.log(data);
-      return data.items;
+      return data;
     } catch (error) {
       errToast(error.message);
       return thunkAPI.rejectWithValue(error.message);

@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+
 const CommonButton = ({ value, redirect }) => {
   return (
     <NavLink
@@ -9,5 +10,4 @@ const CommonButton = ({ value, redirect }) => {
     </NavLink>
   );
 };
-
 export default CommonButton;

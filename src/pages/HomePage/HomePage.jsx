@@ -1,16 +1,5 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-// import { fetchCatalog } from "../../redux/catalog/operations";
-
-import { fetchCampers } from "../../redux/campers/operations";
-import CommonButton from "../../components/CommonButton/CommonButton";
+import CommonButton from "../../components/buttons/CommonButton/CommonButton.jsx";
 const HomePage = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCampers());
-  }, [dispatch]);
-
   return (
     <div
       style={{
