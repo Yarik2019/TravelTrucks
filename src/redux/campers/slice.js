@@ -38,7 +38,7 @@ const campersSlice = createSlice({
       .addCase(fetchCamperById.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isError = null;
-        state.campers = action.payload;
+        state.oneCamper = action.payload;
       })
       .addMatcher(
         isAnyOf(fetchCampers.pending, fetchCamperById.pending),
@@ -61,18 +61,6 @@ const campersSlice = createSlice({
       );
   },
 });
-
-// export const selectFilteredContacts = createSelector(
-//   [selectContacts, selectedNameFilter],
-//   (contacts, filter) => {
-//     const normalizedFilter = filter.toLowerCase().trim();
-//     return contacts.filter(
-//       ({ name, number }) =>
-//         name.toLowerCase().trim().includes(normalizedFilter) ||
-//         number.includes(normalizedFilter)
-//     );
-//   }
-// );
 
 export const { incrementPage, setParams } = campersSlice.actions;
 

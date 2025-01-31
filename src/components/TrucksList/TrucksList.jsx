@@ -21,6 +21,7 @@ const TrucksList = () => {
   useEffect(() => {
     dispatch(fetchCampers({ params, page }));
   }, [dispatch, page, params]);
+  if (!campers || campers.length === 0) return null;
   return (
     <>
       {isLoading ? (

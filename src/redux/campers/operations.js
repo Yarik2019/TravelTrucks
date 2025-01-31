@@ -25,7 +25,6 @@ export const fetchCamperById = createAsyncThunk(
     try {
       const { data } = await travelTrucksApi.get(`/campers/${catalogId}`);
       successfullyToast("Successfully loaded ID!");
-      console.log(data);
       return data;
     } catch (error) {
       errToast(error.message);

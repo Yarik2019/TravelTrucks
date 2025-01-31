@@ -16,7 +16,7 @@ const CamperFeature = ({ camperInfo }) => {
     .map(([key]) => key);
 
   return (
-    <ul className="flex flex-wrap gap-2">
+    <ul className="flex flex-wrap gap-2 mb-5 xl:mb-7">
       {feature.map((item, i) => (
         <li className="flex bg-gray-100 rounded-3xl py-3 px-[18px]" key={i}>
           <svg

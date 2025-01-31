@@ -9,7 +9,7 @@ const CamperInfoBar = ({ rating, reviews, location }) => {
             <use href={`${sprite}#icon-star`}></use>
           </svg>
         </span>
-        {`${rating}(${reviews.length} Reviews)`}
+        {`${rating}(${reviews?.length} Reviews)`}
       </h4>
       <h4 className="flex items-center text-text-color text-base font-normal leading-normal mt-3 sm:m-0">
         <span>
@@ -17,7 +17,7 @@ const CamperInfoBar = ({ rating, reviews, location }) => {
             <use href={`${sprite}#icon-map`}></use>
           </svg>
         </span>
-        {`${location.split(", ").pop()}, Ukraine`}
+        {`${location?.split(", ").pop()}, Ukraine`}
       </h4>
     </div>
   );
