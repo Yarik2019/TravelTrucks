@@ -10,7 +10,6 @@ export const fetchCampers = createAsyncThunk(
         `/campers?${params}&limit=${limit}&page=${page}`
       );
       successfullyToast("Successfully loaded!");
-      console.log(data);
       return data;
     } catch (error) {
       errToast(error.message);

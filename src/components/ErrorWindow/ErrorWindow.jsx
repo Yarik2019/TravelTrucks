@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 
-const ErrorWindow = () => {
+const ErrorWindow = ({ redirect }) => {
   const [isError, setIsError] = useState(true);
-  const [navigateToHome, setNavigateToHome] = useState(false);
+  const [navigate, setNavigate] = useState(false);
 
   const handleHomePage = () => {
     setIsError(false);
-    setNavigateToHome(true);
+    setNavigate(true);
   };
 
-  if (navigateToHome) {
-    return <Navigate to="/" />;
+  if (navigate) {
+    return <Navigate to={redirect} />;
   }
 
   return (

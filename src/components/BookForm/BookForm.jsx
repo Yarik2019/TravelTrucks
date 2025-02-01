@@ -1,7 +1,9 @@
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import SubmitBtn from "../buttons/SubmitBtn/SubmitBtn";
-// import SubmitBtn from "../buttons/SubmitBtn/SubmitBtn";
-// import * as Yup from "yup";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { successfullyToast } from "../../utils/toast";
+import { orderSchemaBook } from "../../utils/validations";
 const BookForm = () => {
   const initialValues = {
     name: "",
@@ -10,16 +12,11 @@ const BookForm = () => {
     comment: "",
   };
 
-  // const validationSchema = Yup.object({
-  //   name: Yup.string().required("Name is required"),
-  //   email: Yup.string().email("Invalid email").required("Email is required"),
-  //   bookingDate: Yup.date().required("Booking date is required"),
-  // });
-
-  const handleSubmit = (values, { resetForm }) => {
-    console.log("Form submitted", values);
-    resetForm();
+  const handleSubmit = (e, options) => {
+    successfullyToast("Successfully booked");
+    options.resetForm();
   };
+
   return (
     <div className="w-full h-auto border-[1px] border-[#dadde1] py-5 px-3 lg:py-8 2xl:py-11 lg:px-8 2xl:px-[57px] rounded-[10px]">
       <h2 className="text-xl font-semibold leading-tight text-text-color mb-1">
@@ -30,12 +27,12 @@ const BookForm = () => {
       </p>
       <Formik
         initialValues={initialValues}
-        // validationSchema={validationSchema}
+        validationSchema={orderSchemaBook}
         onSubmit={handleSubmit}
       >
         {() => (
-          <Form className="space-y-4">
-            <div className="mb-[14px]">
+          <Form className="flex flex-col mb-6 gap-[14px]">
+            <label>
               <Field
                 name="name"
                 type="text"
@@ -44,11 +41,11 @@ const BookForm = () => {
               />
               <ErrorMessage
                 name="name"
-                component="div"
+                component="p"
                 className="text-red-500 text-sm"
               />
-            </div>
-            <div className="mb-[14px]">
+            </label>
+            <label>
               <Field
                 name="email"
                 type="email"
@@ -57,30 +54,38 @@ const BookForm = () => {
               />
               <ErrorMessage
                 name="email"
-                component="div"
+                component="p"
                 className="text-red-500 text-sm"
               />
-            </div>
-            <div className="mb-[14px]">
-              <Field
-                name="bookingDate"
-                type="date"
-                className="w-full p-[18px] bg-gray-100 text-text-color font-display rounded-xl outline-0 transition-transform transform hover:scale-105"
-              />
-              <ErrorMessage
-                name="bookingDate"
-                component="div"
+            </label>
+            <label className="">
+              <Field name="date">
+                {({ field, form }) => (
+                  <DatePicker
+                    {...field}
+                    selected={field.value ? new Date(field.value) : null}
+                    onChange={(date) => form.setFieldValue("date", date)}
+                    placeholderText="Booking date*"
+                    minDate={new Date()}
+                    shouldCloseOnSelect={true}
+                    className="w-full  transition-transform transform hover:scale-105"
+                  />
+                )}
+              </Field>
+              <ErrorMessage 
+                name="date"
+                component="p"
                 className="text-red-500 text-sm"
               />
-            </div>
-            <div className="mb-6">
+            </label>
+            <label>
               <Field
                 name="comment"
                 as="textarea"
                 placeholder="Comment"
                 className="w-full p-[18px] h-[118px] bg-gray-100 text-text-color font-display rounded-xl outline-0 transition-transform transform hover:scale-105"
               />
-            </div>
+            </label>
             <div className="text-center">
               <SubmitBtn value="Send" />
             </div>

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "./styles/fonts.css";
-
+@import "./styles/calendar.css";
 :root {
   --background: #ffffff;
   --text-color: #101828;

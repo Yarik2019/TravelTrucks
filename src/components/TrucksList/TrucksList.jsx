@@ -27,7 +27,7 @@ const TrucksList = () => {
   return (
     <div className="relative">
       {isLoading && (
-        <div className="absolute inset-0 flex justify-center items-center bg-white bg-opacity-50">
+        <div className="absolute inset-0 h-screen z-10 flex justify-center items-center bg-white ">
           <Loader height="50" width="50" />
         </div>
       )}

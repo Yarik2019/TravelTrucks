@@ -1,8 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
 import CamperInfoBar from "../CamperInfoBar/CamperInfoBar";
 import BookForm from "../BookForm/BookForm";
+import { useTab } from "../hooks/useTab";
 
 const CamperCard = ({ camper }) => {
+  const { handleTabClick } = useTab();
   return (
     <div className="w-full">
       <h2 className="font-semibold text-2xl mb-2">{camper?.name}</h2>
@@ -18,9 +20,9 @@ const CamperCard = ({ camper }) => {
       </p>
       <ul className="flex flex-wrap justify-center sm:justify-start gap-4 md:gap-6 lg:gap-8 2xl:gap-12 mb-4 md:mb-5 2xl:mb-7">
         {camper?.gallery?.map((item, i) => (
-          <li key={i}>
+          <li key={i} className="w-full lg:w-auto">
             <img
-              className="w-full md:max-w-[292px] h-[320px] object-cover object-center rounded-[10px]"
+              className="w-full lg:max-w-[292px] h-[320px] object-cover object-center rounded-[10px]"
               src={item?.thumb}
               alt={"camper" + i}
             />
@@ -35,9 +37,12 @@ const CamperCard = ({ camper }) => {
           <li>
             <NavLink
               to="features"
+              onClick={() => handleTabClick("features")}
               className={({ isActive }) =>
-                `text-xl font-semibold pb-6 ${
-                  isActive ? "border-b-4 border-btn-red" : ""
+                `text-xl font-semibold pb-6 transition-all duration-300 hover:text-btn-red ${
+                  isActive
+                    ? "border-b-4 border-btn-red"
+                    : "border-b-0 border-btn-red"
                 }`
               }
             >
@@ -47,9 +52,12 @@ const CamperCard = ({ camper }) => {
           <li>
             <NavLink
               to="reviews"
+              onClick={() => handleTabClick("reviews")}
               className={({ isActive }) =>
-                `text-xl font-semibold pb-6 ${
-                  isActive ? "border-b-4 border-btn-red" : ""
+                `text-xl font-semibold pb-6 transition-all duration-200 hover:text-btn-red ${
+                  isActive
+                    ? "border-b-4 border-btn-red"
+                    : "border-b-0 border-btn-red"
                 }`
               }
             >
@@ -57,7 +65,7 @@ const CamperCard = ({ camper }) => {
             </NavLink>
           </li>
         </ul>
-        <div className="w-full min-h-full flex flex-col-reverse  md:flex-row items-stretch gap-5 2xl:gap-10">
+        <div className="w-full min-h-full flex flex-col-reverse md:flex-row items-stretch gap-5 2xl:gap-10">
           <div className="w-full md:w-1/2">
             <Outlet />
           </div>
