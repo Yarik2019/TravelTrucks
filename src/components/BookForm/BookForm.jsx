@@ -31,7 +31,7 @@ const BookForm = () => {
         onSubmit={handleSubmit}
       >
         {() => (
-          <Form className="flex flex-col mb-6 gap-[14px]">
+          <Form className="flex flex-col gap-[14px]">
             <label>
               <Field
                 name="name"
@@ -72,7 +72,7 @@ const BookForm = () => {
                   />
                 )}
               </Field>
-              <ErrorMessage 
+              <ErrorMessage
                 name="date"
                 component="p"
                 className="text-red-500 text-sm"

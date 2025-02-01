@@ -1,12 +1,12 @@
 import CommonButton from "../../components/buttons/CommonButton/CommonButton.jsx";
+import bgTruck from "../../assets/img/truck_bg.jpg";
 const HomePage = () => {
   return (
     <div
       style={{
-        backgroundImage:
-          "url(https://raw.githubusercontent.com/Yarik2019/conversion/refs/heads/main/truck_bg.jpg)",
+        backgroundImage: `url(${bgTruck})`,
       }}
-      className="h-screen bg-black bg-cover bg-center bg-no-repeat bg-retina"
+      className={`bg-[url(${bgTruck})] h-screen bg-black bg-cover bg-center bg-no-repeat bg-retina`}
     >
       <div className="max-w-[1440px] m-auto h-full px-4 sm:px-8 md:px-16 flex flex-col justify-center">
         <div className="h-44">
