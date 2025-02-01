@@ -17,7 +17,7 @@ const TrucksItem = ({ camperInfo }) => {
         <div className="flex flex-col">
           <div className="flex justify-between items-start mb-5 xl:mb-6">
             <div>
-              <h3 className="max-w-[250px] font-semibold leading-[1.333] text-2xl mb-2 md:mb-2.5 overflow-hidden text-ellipsis whitespace-nowrap">
+              <h3 className="max-w-[130px] md:max-w-[200px] 2xl:max-w-[250px] font-semibold leading-[1.333] text-2xl mb-2 md:mb-2.5 overflow-hidden text-ellipsis whitespace-nowrap">
                 {name}
               </h3>
               <CamperInfoBar

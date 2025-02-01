@@ -1,6 +1,6 @@
 import sprite from "../../assets/img/sprite.svg";
 
-const CamperFeature = ({ camperInfo }) => {
+const CamperFeature = ({ camperInfo, featureClass }) => {
   const allowedFeatures = [
     "automatic",
     "diesel",
@@ -18,7 +18,12 @@ const CamperFeature = ({ camperInfo }) => {
   return (
     <ul className="flex flex-wrap gap-2 mb-5 xl:mb-7">
       {feature.map((item, i) => (
-        <li className="flex bg-gray-100 rounded-3xl py-3 px-[18px]" key={i}>
+        <li
+          className={`flex  items-center gap-2 px-[18px] rounded-[100px] ${
+            featureClass ? "py-[12px] bg-gray-light" : "py-[6px] bg-gray-100"
+          }`}
+          key={i}
+        >
           <svg
             className={`w-5 h-5 ${
               ["microwave", "water"].includes(item)

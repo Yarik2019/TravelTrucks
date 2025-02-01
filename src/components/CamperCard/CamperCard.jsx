@@ -35,7 +35,6 @@ const CamperCard = ({ camper }) => {
           <li>
             <NavLink
               to="features"
-              state={{ data: camper }}
               className={({ isActive }) =>
                 `text-xl font-semibold pb-6 ${
                   isActive ? "border-b-4 border-btn-red" : ""
@@ -48,7 +47,6 @@ const CamperCard = ({ camper }) => {
           <li>
             <NavLink
               to="reviews"
-              state={{ data: camper?.reviews }}
               className={({ isActive }) =>
                 `text-xl font-semibold pb-6 ${
                   isActive ? "border-b-4 border-btn-red" : ""
@@ -59,7 +57,7 @@ const CamperCard = ({ camper }) => {
             </NavLink>
           </li>
         </ul>
-        <div className="w-full min-h-full flex flex-col md:flex-row items-stretch gap-5 2xl:gap-10">
+        <div className="w-full min-h-full flex flex-col-reverse  md:flex-row items-stretch gap-5 2xl:gap-10">
           <div className="w-full md:w-1/2">
             <Outlet />
           </div>
